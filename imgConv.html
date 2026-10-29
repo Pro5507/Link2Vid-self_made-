@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Website</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: 'Fredoka', sans-serif;
+            background-color: #051f1e;
+            min-height: 100vh;
+            background-image: url('bg.png');
+            background-size: cover;
+        }
+
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background-color: rgba(0, 0, 0, 0.9);;
+            padding: 15px 25px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 1000;
+        }
+
+        .logo {
+            border-radius: 50%;
+        }
+
+        .links {
+            display: flex;
+            gap: 12px;
+            align-items: center;
+        }
+
+        .links a {
+            font-family: 'Fredoka', sans-serif;
+            color: rgb(121, 217, 255);
+            background-color: rgba(0, 0, 0, 0.5);;
+            font-size: 20px;
+            padding: 8px 12px;
+            border: 2px solid #174f61;
+            border-radius: 10px;
+            text-decoration: none;
+            transition: 0.3s ease;
+        }
+
+        .links a:hover {
+            color: #ffffff;
+            background-color: #23788a;
+        }
+
+        .container-wrapper {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: stretch;
+            gap: 30px;
+
+            width: 100%;
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 130px 25px 30px;
+        }
+
+        .container1,
+        .container2 {
+            flex: 1;
+            min-width: 0;
+            min-height: 300px;
+            padding: 25px;
+            text-align: center;
+            color: white;
+            border: 1px solid rgba(121, 217, 255, 0.2);
+            border-radius: 15px;
+            background-color: rgba(0, 0, 0, 0.7);
+        }
+
+        @media (max-width: 768px) {
+            nav {
+                padding: 12px;
+                flex-wrap: wrap;
+                gap: 12px;
+            }
+
+            .links {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .links a {
+                font-size: 16px;
+                padding: 6px 8px;
+            }
+
+            .container-wrapper {
+                gap: 16px;
+                padding: 140px 16px 25px;
+            }
+        }
+
+        @media (max-width: 550px) {
+            nav {
+                position: relative;
+            }
+
+            .container-wrapper {
+                flex-direction: column;
+                padding: 25px 16px;
+            }
+
+            .container1,
+            .container2 {
+                width: 100%;
+                min-height: 200px;
+            }
+        }
+
+        .btn {
+            font-size: 18px;
+            background-color: rgba(255, 255, 255, 0.2);
+            border: 4px solid rgba(255, 255, 255, 0.2);
+            border-radius: 10px;
+        }
+
+        .format {
+            font-size: 18px;
+            background-color: rgba(255, 255, 255, 0.2);
+            border: 4px solid rgba(255, 255, 255, 0.2);
+            border-radius: 10px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav>
+        <img class="logo" src="logo.png" width="50" height="50" alt="Website logo">
+
+        <div class="links">
+            <a href="index.html"><b>Home</b></a>
+            <a href="imgConv.html"><b>Image Converter</b></a>
+            <a href="vidConv.html"><b>Video Converter</b></a>
+        </div>
+    </nav>
+
+    <div class="container-wrapper">
+
+        <div class="container1">
+            <h2>Remove Background</h2>
+            <hr>
+            <!-- Here we will add a media picker -->
+            <br>
+            <button class="btn" id="remove-bg">Remove BG</button>
+        </div>
+
+        <div class="container2">
+            <h2>Convert Image Format</h2>
+            <hr>
+
+            <!-- Here we will add a media picker -->
+            <br>
+            <select class="format">
+                <option value="mp4">png</option>
+                <option value="avi">jpg</option>
+                <option value="mov">jpeg</option>
+            </select>
+        </div>
+
+    </div>
+
+</body>
+
+</html>
